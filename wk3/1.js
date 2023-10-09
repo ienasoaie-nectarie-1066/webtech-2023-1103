@@ -19,3 +19,6 @@ function getMajor(a1){
     return a1.filter(e => 2023 - e >= 18)
 }
 console.log(getMajor(yearsOfBirth))
+
+const results = yearsOfBirth.map(e => 2023 - e).filter(e => e>=18)
+console.log(results)
