@@ -1,7 +1,9 @@
 function formatString(s, param){
     let modified = s
     for(const par in param){
-        modified = modified.replace('{'+par+'}', param[par])
+        modified = modified.replace(`{${par}}`, param[par])
+        //modified = modified.replace('{'+par+'}', param[par])
+        //try variant with $
     }
     return modified
 }

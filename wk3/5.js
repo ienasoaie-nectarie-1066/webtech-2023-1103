@@ -3,7 +3,8 @@
 function formatString(s, params){
     let modify = s
     for(let i = 0; i < params.length; i++){
-        modify = modify.replace('{'+i+'}', params[i])
+        modify = modify.replace(`{${i}}`, params[i])
+       // modify = modify.replace('{'+i+'}', params[i])
         //try variant with $
     }
     return modify
