@@ -1,4 +1,7 @@
 function distance(first, second){
+    if(typeof first != typeof [] || typeof second != typeof []){
+        throw new TypeError('InvalidType')
+    }
     first = first.reduce(function(a,b){
         if(a.indexOf(b) < 0){
             a.push(b)
@@ -23,3 +26,4 @@ function distance(first, second){
 console.log(distance(['a','a','a'], ['a','c','d','c']))
 //------------------------['a']--------['a','c','d']---
 //--------------------------1----------------3---------
+module.exports.distance = distance
