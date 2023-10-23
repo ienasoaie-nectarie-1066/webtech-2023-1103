@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
     <script>
         window.onload = () =>{
         const b0 = document.getElementById('b0')
@@ -10,7 +12,7 @@
             try{
                 const response = await fetch('http://localhost:8080/students')
                 const json = await response.json()
-                students.innerHTML = json.map(e => `<div>Student: ${e.name} id: ${e.id}</div>`).join('')
+                students.innerHTML = json.map(e => `<div>Student: ${e.name}; id: ${e.id}</div>`).join('')
             }catch(error){
                 console.log(error)
             }
@@ -20,8 +22,6 @@
 </head>
 <body>
     <input type="button" value="load" id="b0"/>
-    <div id="students">
-
-    </div>
+    <div id="students"></div>
 </body>
 </html>
