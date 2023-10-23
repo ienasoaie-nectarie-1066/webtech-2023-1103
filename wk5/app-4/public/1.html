@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+        const b0 = document.getElementById('b0')
+        b0.addEventListener('click',async ()=>{
+            try{
+                const response = await fetch('http://localhost:8080/students')
+                const json = await response.json()
+                students.innerHTML = json.map(e => `<div>Student: ${e.name} id: ${e.id}</div>`).join('')
+            }catch(error){
+                console.log(error)
+            }
+        })
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="load" id="b0"/>
+    <div id="students">
+
+    </div>
+</body>
+</html>
